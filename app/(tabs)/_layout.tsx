@@ -1,35 +1,21 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { Tabs } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: "#7cb342",
+        tabBarInactiveTintColor: "#888",
+        tabBarStyle: { backgroundColor: "#1a1a2e" },
         headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
+      }}
+    >
+      <Tabs.Screen name="feed" options={{ title: "Feed", tabBarIcon: ({ color }) => <Ionicons name="play-circle" size={24} color={color} /> }} />
+      <Tabs.Screen name="quiz" options={{ title: "Quiz", tabBarIcon: ({ color }) => <Ionicons name="help-circle" size={24} color={color} /> }} />
+      <Tabs.Screen name="streak" options={{ title: "Streak", tabBarIcon: ({ color }) => <Ionicons name="flame" size={24} color={color} /> }} />
+      <Tabs.Screen name="battle" options={{ title: "Battle", tabBarIcon: ({ color }) => <Ionicons name="trophy" size={24} color={color} /> }} />
+      <Tabs.Screen name="leaderboard" options={{ title: "Ranks", tabBarIcon: ({ color }) => <Ionicons name="podium" size={24} color={color} /> }} />
     </Tabs>
   );
 }
