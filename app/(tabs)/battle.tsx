@@ -11,8 +11,8 @@ export default function FeedScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: "#1a1a2e" },
+  container: { flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: "#0a0a0a" },
   emoji: { fontSize: 48, marginBottom: 12 },
-  title: { fontSize: 24, fontWeight: "bold", color: "#7cb342" },
+  title: { fontSize: 24, fontWeight: "bold", color: "#8bc34a" },
   subtitle: { fontSize: 14, color: "#aaa", marginTop: 8 },
 });
